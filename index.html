@@ -263,7 +263,7 @@
 
             <div class="form-box">
                 <h2>Sign Up</h2>
-                <form id="signupForm" action="https://formspree.io/f/xpwzgvjl" method="POST">
+                <form id="signupForm">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" required>
@@ -277,7 +277,6 @@
                         <input type="tel" id="phone" name="phone">
                     </div>
                     <button type="submit">Send</button>
-                    <div class="success-message" id="success">Thanks! We'll be in touch.</div>
                 </form>
             </div>
 
@@ -297,11 +296,24 @@
 
     <script>
         document.getElementById('signupForm').addEventListener('submit', function(e) {
-            // Formspree handles the submit, but we show success
-            setTimeout(function() {
-                document.getElementById('success').style.display = 'block';
-                document.getElementById('signupForm').reset();
-            }, 500);
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            
+            const subject = encodeURIComponent(`New Player: ${name}`);
+            const body = encodeURIComponent(
+                `New player sign up:\n\n` +
+                `Name: ${name}\n` +
+                `Email: ${email}\n` +
+                `Phone: ${phone || 'Not provided'}\n`
+            );
+            
+            window.location.href = `mailto:mightyfcgy@gmail.com?subject=${subject}&body=${body}`;
+            
+            alert('Your email app should open. Send the email to complete your sign up!');
+            this.reset();
         });
     </script>
 </body>
