@@ -131,8 +131,18 @@
 
         /* Hero */
         .hero {
-            padding: 80px 0 60px;
+            padding: 60px 0 40px;
             text-align: center;
+        }
+
+        .hero-logo {
+            margin-bottom: 30px;
+        }
+
+        .hero-logo img {
+            height: clamp(120px, 25vw, 180px);
+            filter: drop-shadow(0 10px 30px rgba(255, 107, 107, 0.3));
+            animation: float 3s ease-in-out infinite;
         }
 
         .badge {
@@ -470,13 +480,16 @@
 
     <header>
         <div class="container header-content">
-            <div class="logo"><img src="logo.jpg" alt="Mighty FC" height="50"></div>
+            <div class="logo">
             <a href="#signup" class="cta-small">Join Now</a>
         </div>
     </header>
 
     <main class="container">
         <section class="hero">
+            <div class="hero-logo">
+                <img src="logo.jpg" alt="Mighty FC">
+            </div>
             <div class="badge">Now Recruiting for New Season</div>
             <h1>Turn Up & <span class="highlight">Play Football</span></h1>
             <p>Weekly games at Clee Fields, Grimsby. All abilities welcome — from beginners to seasoned pros. Just turn up and play.</p>
