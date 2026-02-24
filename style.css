@@ -7,7 +7,6 @@
 body {
     font-family: 'Arial Black', 'Helvetica Neue', sans-serif;
     background: #fff;
-    background-image: none;
     color: #000;
     min-height: 100vh;
     line-height: 1.4;
@@ -18,7 +17,7 @@ header {
     background: #000;
     padding: 40px 20px;
     text-align: center;
-    border-bottom: 4px solid #000;
+    border-bottom: 4px solid #ffc800;
 }
 
 .logo {
@@ -29,7 +28,6 @@ header {
     margin-bottom: 10px;
     border-radius: 8px;
     transform: scale(1.15);
-    filter: grayscale(100%);
 }
 
 header h1 {
@@ -37,8 +35,7 @@ header h1 {
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 4px;
-    color: #fff;
-    text-shadow: none;
+    color: #ffc800;
 }
 
 .tagline {
@@ -49,14 +46,14 @@ header h1 {
     letter-spacing: 6px;
 }
 
-/* Main - Desktop */
+/* Main */
 main {
     max-width: 1000px;
     margin: 0 auto;
     padding: 40px;
 }
 
-/* Desktop grid */
+/* Grid */
 .info-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -67,7 +64,6 @@ main {
 .info-box {
     background: #fff;
     border: 2px solid #000;
-    border-radius: 0;
     padding: 25px 20px;
     text-align: center;
     position: relative;
@@ -80,7 +76,7 @@ main {
     left: 0;
     right: 0;
     height: 4px;
-    background: #000;
+    background: #ffc800;
 }
 
 .info-box:hover {
@@ -91,7 +87,7 @@ main {
 .info-box:hover h2,
 .info-box:hover p,
 .info-box:hover span {
-    color: #fff;
+    color: #ffc800;
 }
 
 .info-box h2 {
@@ -109,19 +105,13 @@ main {
 }
 
 .info-box span {
-    display: block;
     font-size: 0.8rem;
     color: #666;
     margin-top: 5px;
-    font-weight: normal;
+    display: block;
 }
 
-/* CTA - Hidden */
-.cta {
-    display: none;
-}
-
-/* Button Row */
+/* Buttons */
 .button-row {
     display: flex;
     justify-content: center;
@@ -132,20 +122,21 @@ main {
 
 .btn {
     display: inline-block;
-    background: #000;
-    color: #fff;
+    background: #ffc800;
+    color: #000;
     padding: 15px 30px;
     text-decoration: none;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-size: 0.9rem;
-    border: 2px solid #000;
+    border: 2px solid #ffc800;
 }
 
 .btn:hover {
-    background: #fff;
-    color: #000;
+    background: #000;
+    color: #ffc800;
+    border-color: #000;
 }
 
 /* Contact */
@@ -160,68 +151,31 @@ main {
     text-decoration: underline;
 }
 
-/* Social - Hidden */
-.social {
-    display: none;
-}
-
-/* WhatsApp Note */
-.whatsapp-note {
-    text-align: center;
-    background: #000;
-    color: #fff;
-    padding: 15px;
-    margin: 20px auto;
-    max-width: 400px;
-    font-size: 0.95rem;
-    border-radius: 0;
-}
-
 /* Footer */
 footer {
     text-align: center;
     padding: 25px;
     background: #000;
-    color: #fff;
+    color: #ffc800;
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
 footer a {
-    color: #fff;
+    color: #ffc800;
 }
 
-/* ==================== MOBILE ==================== */
+/* Mobile */
 @media (max-width: 768px) {
-    header {
-        padding: 25px 15px;
-    }
-
-    .logo {
-        width: 70px;
-        height: 70px;
-    }
-
-    header h1 {
-        font-size: 1.5rem;
-        letter-spacing: 2px;
-    }
-
-    .tagline {
-        font-size: 0.7rem;
-        letter-spacing: 3px;
-    }
-
-    main {
-        padding: 20px 15px;
-    }
-
-    .info-grid {
-        grid-template-columns: 1fr;
-        gap: 10px;
-    }
-
+    header { padding: 25px 15px; }
+    .logo { width: 70px; height: 70px; }
+    header h1 { font-size: 1.5rem; }
+    .tagline { font-size: 0.7rem; }
+    main { padding: 20px 15px; }
+    
+    .info-grid { grid-template-columns: 1fr; gap: 10px; }
+    
     .info-box {
         display: flex;
         justify-content: space-between;
@@ -229,29 +183,11 @@ footer a {
         padding: 15px;
         text-align: left;
     }
-
-    .info-box::before {
-        display: none;
-    }
-
-    .info-box h2 {
-        margin-bottom: 0;
-        font-size: 0.65rem;
-        margin-right: 15px;
-        min-width: 60px;
-    }
-
-    .info-box p {
-        font-size: 1rem;
-        text-align: right;
-    }
-
-    .info-box span {
-        display: none;
-    }
-
-    .whatsapp-note {
-        font-size: 0.85rem;
-        padding: 12px;
-    }
+    .info-box::before { display: none; }
+    .info-box h2 { margin-bottom: 0; font-size: 0.65rem; margin-right: 15px; min-width: 60px; }
+    .info-box p { font-size: 1rem; text-align: right; }
+    .info-box span { display: none; }
+    
+    .button-row { flex-direction: column; }
+    .btn { width: 100%; text-align: center; }
 }
